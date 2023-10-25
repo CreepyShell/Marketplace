@@ -1,6 +1,11 @@
-const express = require('express');
-const router = express.Router();
+const express = require('express')
+var router = express.Router();
 
-router.get('/', ctrl.getAllOffers);
-router.post('/offers', ctrl.addOffer);
-router.delete('/offers/:id', ctrl.deleteOffer);
+const mainPageCtrl = require('../controllers/mainpage')
+const offersCtrl = require('../controllers/offers')
+
+router.get('/', mainPageCtrl.offers);
+router.post('/offers', offersCtrl.addOffer);
+router.delete('/offers/:id', offersCtrl.deleteOffer);
+
+module.exports = router;
