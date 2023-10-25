@@ -5,6 +5,12 @@ const productScheme = new mongoose.Schema({
         required: true,
         unique: true,
     },
+    name: {
+        type: String,
+        required: true,
+        min: 3,
+        max: 50
+    },
     description: {
         type: String,
         default: 'None',

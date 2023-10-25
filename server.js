@@ -3,6 +3,7 @@ const path = require('path')
 require('./server/models/marketplaceDB');
 
 const auth = require('./server/routes/auth');
+const offers = require('./server/routes/offers');
 
 const app = express()
 
@@ -12,10 +13,7 @@ app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', (req, res, next) => {
-    res.render('MainPage/main_page.pug')
-})
-
 app.use('/', auth)
+app.use('/', offers)
 
 app.listen(3000)

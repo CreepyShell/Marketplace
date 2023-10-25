@@ -1,5 +1,20 @@
 extends ../layout
 
 block content
- h1 Welcome to Marketplace
- h3 Please respect other sellers
+ .header
+  h1 Welcome to Marketplace
+  h3 Please respect other sellers
+  .dropdown
+  button.btn.btn-secondary.dropdown-toggle(type='button', data-bs-toggle='dropdown', aria-expanded='false') Sort by
+  ul.dropdown-menu
+    li
+      a.dropdown-item(href='#') Date
+    li
+      a.dropdown-item(href='#') Price
+    li
+      a.dropdown-item(href='#') Cart
+
+
+ .card-container
+  each item in list
+   include offer.pug
