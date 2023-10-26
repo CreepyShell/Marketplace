@@ -1,0 +1,55 @@
+extends ../layout
+
+block content
+ link(rel='stylesheet', href='/stylesheets/mainpage/add-offer.css')
+ form.add-offer
+  h1 Add offer
+  h5 Choose the product you want to offer: 
+  .input-group.mb-3
+   label.input-group-text(for='inputGroupSelect01') Options
+   select#inputGroupSelect01.form-select
+     option(selected='') Choose...
+     each product in products
+      option(value='1') #{product.name}
+     option(value='new') Add new...
+  .mb-3
+    label.form-label(for='price') Enter offer price: 
+    input#price.form-control(type='number')
+  h5 Are you ready to burgain?
+  .form-check
+   input#flexRadioDefault1.form-check-input(type='radio', name='flexRadioDefault')
+   label.form-check-label(for='flexRadioDefault1')
+     | Yes
+  .form-check
+   input#flexRadioDefault2.form-check-input(type='radio', name='flexRadioDefault', checked='')
+   label.form-check-label(for='flexRadioDefault2')
+     | No
+   button.btn.btn-primary.mx-auto.d-block(type='submit') Submit
+
+  .add-product-container
+   form.add-product.d-none
+    h1 Add new product
+    .mb-3
+      label.form-label(for='name') Enter product name: 
+      input#name.form-control(type='text')
+    .mb-3
+      label.form-label(for='description') Enter product description: 
+      input#description.form-control(type='text')
+    .mb-3
+      label.form-label(for='category') Enter product category: 
+      input#category.form-control(type='text')
+    .mb-3
+      label.form-label(for='location') Enter product location: 
+      input#location.form-control(type='text')
+    .mb-3
+      label.form-label(for='imageURL') Enter product imageURL: 
+      input#imageURL.form-control(type='text')
+    .mb-3
+      label.form-label(for='timeUsed') Enter product timeUsed: 
+      input#timeUsed.form-control(type='date')
+    .mb-3
+      label.form-label(for='amount') Enter product amount: 
+      input#amount.form-control(type='number')
+    button.btn.btn-primary.mx-auto.d-block(type='submit') Submit
+
+   
