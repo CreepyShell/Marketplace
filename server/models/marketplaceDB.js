@@ -14,7 +14,6 @@ try {
     mongoose.model('Offer', offerScheme);
     mongoose.model('User', userScheme);
     mongoose.model('Product', productScheme);
-
 }
 catch (e) {
     console.log("could not connect");

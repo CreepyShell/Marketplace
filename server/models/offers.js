@@ -2,11 +2,6 @@ const mongoose = require('mongoose');
 const userScheme = require('./users');
 const productScheme = require('./product');
 const offerScheme = new mongoose.Schema({
-    id: {
-        type: Number,
-        required: true,
-        unique: true,
-    },
     user: [userScheme],
     product: [productScheme],
     price: {

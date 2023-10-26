@@ -4,6 +4,7 @@ require('./server/models/marketplaceDB');
 
 const auth = require('./server/routes/auth');
 const offers = require('./server/routes/offers');
+const products = require('./server/routes/product')
 
 const app = express()
 
@@ -15,5 +16,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', auth)
 app.use('/', offers)
+app.use('/', products)
 
 app.listen(3000)
