@@ -33,7 +33,7 @@ const productScheme = new mongoose.Schema({
         type: Date,
         required: true,
     },
-    amountmount: {
+    amount: {
         type: Number,
         default: 0,
         min: 0,
