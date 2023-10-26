@@ -1,7 +1,6 @@
 const express = require('express')
 var router = express.Router();
 
-const mainPageCtrl = require('../controllers/mainpage')
 const offersCtrl = require('../controllers/offers')
 
 router.get('/', mainPageCtrl.offers);
