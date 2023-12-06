@@ -4,16 +4,16 @@ const offerCtrl = require('../controllers/offers')
 
 router.route('/offers')
     .get(offerCtrl.getAllOffers)
-    .post(offerCtrl.deleteOffer);
+    .post(offerCtrl.addOffer);
 
 router.route('/offers/:offerid')
     .get(offerCtrl.getOfferById)
     .delete(offerCtrl.deleteOffer);
 
-router.route('/offers/expensive')
+router.route('/offers/sort/expensive')
     .get(offerCtrl.getAllExpensiveOffers)
 
-router.route('/offers/cheap')
+router.route('/offers/sort/cheap')
     .get(offerCtrl.getAllCheapOffers)
 
 module.exports = router;

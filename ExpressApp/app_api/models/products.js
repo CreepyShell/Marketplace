@@ -4,6 +4,7 @@ const productScheme = new mongoose.Schema({
         type: String,
         required: true,
         min: 3,
+        unique: true,
         max: 50
     },
     description: {
@@ -23,7 +24,10 @@ const productScheme = new mongoose.Schema({
         min: 4,
         max: 25
     },
-    imageURL: String,
+    imageURL: {
+        type: String,
+        max: 200
+    },
     timeUsed: {
         type: Date,
         required: true,
@@ -33,6 +37,10 @@ const productScheme = new mongoose.Schema({
         default: 0,
         min: 0,
         max: 9999
+    },
+    userId: {
+        type: String,
+        required: true
     }
 });
 module.exports = productScheme;

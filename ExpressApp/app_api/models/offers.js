@@ -1,14 +1,19 @@
 const mongoose = require('mongoose');
-const userScheme = require('./users');
-const productScheme = require('./product');
 const offerScheme = new mongoose.Schema({
-    user: [userScheme],
-    product: [productScheme],
+    userId: {
+        type: String,
+        required: true
+    },
+    productId: {
+        type: String,
+        required: true
+    },
     price: {
         type: mongoose.Types.Decimal128,
         required: true,
-        min: 0,
-        max: 9999
+        validate: {
+            validator: (pr) => pr > 0 && pr < 9999
+        }
     },
     readyToBurgain: {
         type: Boolean,
