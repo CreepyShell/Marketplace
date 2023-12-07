@@ -1,0 +1,12 @@
+form {
+    width: 30em;
+    margin: auto;
+}
+
+.add-product-container {
+    display: none !;
+}
+
+h1 {
+    text-align: center;
+}

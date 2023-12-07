@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="/stylesheets/mainpage/add-offer.css" />
+<form class="add-offer">
+    <h1>Add offer</h1>
+    <h5>Choose the product you want to offer: </h5>
+    <div class="input-group mb-3"><label class="input-group-text" for="inputGroupSelect01">Options</label><select
+            class="form-select" id="inputGroupSelect01">
+            <option selected="">Choose...</option>
+            <option value="new">Add new...</option>
+        </select></div>
+    <div class="mb-3"><label class="form-label" for="price">Enter offer price: </label><input class="form-control"
+            id="price" type="number" /></div>
+    <h5>Are you ready to burgain?</h5>
+    <div class="form-check"><input class="form-check-input" id="flexRadioDefault1" type="radio"
+            name="flexRadioDefault" /><label class="form-check-label" for="flexRadioDefault1">Yes</label></div>
+    <div class="form-check"><input class="form-check-input" id="flexRadioDefault2" type="radio" name="flexRadioDefault"
+            checked="" /><label class="form-check-label" for="flexRadioDefault2">No</label><button
+            class="btn btn-primary mx-auto d-block" type="submit">Submit</button></div>
+
+    <div class="add-product-container">
+        <form class="add-product d-none">
+            <h1>Add new product</h1>
+            <div class="mb-3"><label class="form-label" for="name">Enter product name: </label><input
+                    class="form-control" id="name" type="text" /></div>
+            <div class="mb-3"><label class="form-label" for="description">Enter product description: </label><input
+                    class="form-control" id="description" type="text" /></div>
+            <div class="mb-3"><label class="form-label" for="category">Enter product category: </label><input
+                    class="form-control" id="category" type="text" /></div>
+            <div class="mb-3"><label class="form-label" for="location">Enter product location: </label><input
+                    class="form-control" id="location" type="text" /></div>
+            <div class="mb-3"><label class="form-label" for="imageURL">Enter product imageURL: </label><input
+                    class="form-control" id="imageURL" type="text" /></div>
+            <div class="mb-3"><label class="form-label" for="timeUsed">Enter product timeUsed: </label><input
+                    class="form-control" id="timeUsed" type="date" /></div>
+            <div class="mb-3"><label class="form-label" for="amount">Enter product amount: </label><input
+                    class="form-control" id="amount" type="number" /></div><button
+                class="btn btn-primary mx-auto d-block" type="submit">Submit</button>
+        </form>
+    </div>
+</form>

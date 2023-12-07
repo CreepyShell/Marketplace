@@ -4,9 +4,9 @@ import { Component } from '@angular/core';
   selector: 'app-offer-component',
   standalone: true,
   imports: [],
-  templateUrl: './offer-component.component.html',
-  styleUrl: './offer-component.component.css'
+  templateUrl: './offer.component.html',
+  styleUrl: './offer.component.css'
 })
-export class OfferComponentComponent {
+export class OfferComponent {
 
 }
