@@ -1,18 +1,31 @@
 import { Component } from '@angular/core';
-import { Offer } from '../../models/offer';
 import { CommonModule } from '@angular/common';
+import { OfferService } from '../../services/offer.service';
+import { HttpClientModule } from '@angular/common/http';
+import { OfferComponent } from '../offer-component/offer-component.component';
+import { DetailedOffer } from '../../models/detailedOffer';
 
 @Component({
   selector: 'app-mainpage',
   standalone: true,
-  imports: [],
+  providers: [OfferService],
   templateUrl: './mainpage.component.html',
   styleUrl: './mainpage.component.css',
+  imports: [CommonModule, HttpClientModule, OfferComponent],
 })
 export class MainpageComponent {
-  offers: Offer[] = [];
+  detailedOffers: DetailedOffer[] = [];
 
-  constructor() {}
+  constructor(private offerService: OfferService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.offerService.getOffers().subscribe({
+      next: (offers) => {
+        this.detailedOffers = offers;
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
+  }
 }

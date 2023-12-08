@@ -2,16 +2,16 @@
     <div class="card-body"></div>
     <div class="card" style="width: 18rem;">
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">Name: item.user.name</li>
-            <li class="list-group-item">Email: item.user.email</li>
-            <li class="list-group-item">Phone: item.user.phone</li>
+            <li class="list-group-item">Name: {{user.name}}</li>
+            <li class="list-group-item">Email: {{user.email}}</li>
+            <li class="list-group-item">Phone: {{user.phone}}</li>
         </ul>
-        <h5 class="card-title">item.product.name</h5>
-        <h6 class="card-subtitle">item.product.category</h6>
-        <h6 class="card-subtitle mb-2 text-body-secondary">item.price</h6>
-        <p class="card-text">item.product.description</p>
-        <p class="card-text">Used since: item.product.timeUsed.toISOString().split(T)[0]</p>
-        <p class="card-text">Prefered location: item.product.location</p><a class="btn btn-primary">Add to cart</a>
-        <div class="card-footer text-body-secondary">Publicated: item.publicateDate.toISOString().split(T)[0]</div>
+        <h5 class="card-title">{{product.name}}</h5>
+        <h6 class="card-subtitle">{{product.category}}</h6>
+        <h6 class="card-subtitle mb-2 text-body-secondary">price: {{offer.price.$numberDecimal}}</h6>
+        <p class="card-text">{{product.description}}</p>
+        <p class="card-text">Used since: {{product.timeUsed.toLocaleString().split('T')[0]}}</p>
+        <p class="card-text">Prefered location: {{product.location}}</p><a class="btn btn-primary">Add to cart</a>
+        <div class="card-footer text-body-secondary">Publicated: {{offer.publicateDate.toLocaleString().split('T')[0]}}</div>
     </div>
 </div>

@@ -6,6 +6,9 @@ router.route('/offers')
     .get(offerCtrl.getAllOffers)
     .post(offerCtrl.addOffer);
 
+router.route('/offersWithDetails')
+    .get(offerCtrl.getAllOffersWithDetails);
+
 router.route('/offers/:offerid')
     .get(offerCtrl.getOfferById)
     .delete(offerCtrl.deleteOffer);

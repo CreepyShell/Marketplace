@@ -4,11 +4,13 @@
     <div class="dropdown"></div><button class="btn btn-secondary dropdown-toggle" type="button"
         data-bs-toggle="dropdown" aria-expanded="false">Sort by</button>
     <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Date</a></li>
-        <li><a class="dropdown-item" href="#">Price</a></li>
-        <li><a class="dropdown-item" href="#">Cart</a></li>
+        <li><a class="dropdown-item">Date</a></li>
+        <li><a class="dropdown-item">Price</a></li>
+        <li><a class="dropdown-item">Cart</a></li>
     </ul>
-    <div class="container">
-        <div *ngFor="let offer of offers"></div>
+    <div class="card-container">
+        <div *ngFor="let detailedOffer of detailedOffers">
+            <app-offer-component [user]="detailedOffer.user" [product]="detailedOffer.product" [offer]="detailedOffer.offer"></app-offer-component>
+        </div>
     </div>
 </div>

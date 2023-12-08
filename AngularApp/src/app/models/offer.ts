@@ -1,6 +1,8 @@
 export interface Offer {
   id: string;
-  price: number;
+  price: {
+    $numberDecimal: number;
+  };
   readyToBurgain: boolean;
   publicateDate: Date;
 }

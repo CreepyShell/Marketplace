@@ -1,16 +1,49 @@
 const mongoose = require('mongoose');
 const offer = mongoose.model('Offer');
+const user = mongoose.model('User')
+const product = mongoose.model('Product')
 
+const getAllOffersWithDetails = async (req, res) => {
+
+    const offers = await offer.find();
+    if (!offers) {
+        return res.status(404).json('No offers found');
+    }
+
+    // const userPromises = offers.map(offer => user.findById(offer.userId));
+    // const productPromises = offers.map(offer => product.findById(offer.productId));
+
+    // const users = await Promise.all(userPromises);
+    // const products = await Promise.all(productPromises);
+
+    // for (let i = 0; i < offers.length; i++) {
+    //     offers[i].user = users[i];
+    //     offers[i].product = products[i];
+    // }
+    let offerWithDetails = []
+    for (let i = 0; i < offers.length; i++) {
+        offerWithDetails.push({
+            user: '',
+            product: '',
+            offer: offers[i]
+        })
+        let offerUser =  await user.findById(offers[i].userId);
+        offerWithDetails[i].user = offerUser;
+        let offerProduct = await product.findById(offers[i].productId);
+        offerWithDetails[i].product = offerProduct
+    }
+    return res.status(200).json(offerWithDetails);
+}
 
 const getAllOffers = (req, res) => {
-    offer.find().then((offers) => {
+    offer.find().then(async (offers) => {
         if (!offers) {
-            res
+            return res
                 .status(400)
                 .json(err);
         }
         res
-            .status(201)
+            .status(200)
             .json(offers);
     })
         .catch(err => {
@@ -112,4 +145,4 @@ const getAllCheapOffers = (req, res) => {
         })
 }
 
-module.exports = { deleteOffer, addOffer, getAllOffers, getOfferById, getAllExpensiveOffers, getAllCheapOffers }
+module.exports = { deleteOffer, addOffer, getAllOffers, getOfferById, getAllExpensiveOffers, getAllCheapOffers, getAllOffersWithDetails }
